@@ -46,6 +46,8 @@ body {
     background: var(--accent);
     color: white;
     cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    border: 0px;
 }
 
 .todo__new input {

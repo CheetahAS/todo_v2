@@ -6,10 +6,12 @@ interface DeleteTaskBtnProps {
     deleteTodo: (id:number) => void
 }
 
-const DeleteTaskBtn = ({todo, deleteTodo}:DeleteTaskBtnProps) => {
+const DeleteTaskBtn:React.FC<DeleteTaskBtnProps> = ({todo, deleteTodo}) => {
 
     return (
-        <div className="todo__task-del" onClick={() => deleteTodo(todo.id)}>-</div>
+        <button className="todo__task-del" 
+        onClick={() => deleteTodo(todo.id)}
+        >-</button>
     );
 };
 

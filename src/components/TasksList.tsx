@@ -8,7 +8,7 @@ import Task from './Task'
      deleteTodo: (id:number) => void
  }
 
- const TasksList = ({arrForTodos, deleteTodo}: TasksListProps) => {
+ const TasksList:React.FC<TasksListProps> = ({arrForTodos, deleteTodo}) => {
 
     return (
         <div className="todo__list">

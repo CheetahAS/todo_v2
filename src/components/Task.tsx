@@ -7,7 +7,7 @@ interface TaskProps {
     deleteTodo: (id:number) => void
 }
 
-const Task = ({todo, deleteTodo}:TaskProps) => {
+const Task:React.FC<TaskProps> = ({todo, deleteTodo}) => {
     const [isChecked, setIsCheked] = useState<boolean>(false);
     
     const checkBoxHandler = () => {
@@ -23,7 +23,6 @@ const Task = ({todo, deleteTodo}:TaskProps) => {
                 <div onClick={checkBoxHandler}></div> 
             </label>
             <div className="todo__task-text">{todo.text}</div>
-            {/* <div className="todo__task-del" onClick={() => deleteTodo(todo.id)}>-</div>  */}
             <DeleteTaskBtn 
                 todo={todo} 
                 deleteTodo={() => deleteTodo(todo.id)}

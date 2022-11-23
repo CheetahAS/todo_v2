@@ -26,7 +26,7 @@ const App:React.FC = () => {
             <h1 className="todo__title">All tasks</h1>
                 <CreateTodoForm addTodo={(todo) => addTodo(todo)}/>
                 <TodoCounter todoCount={todoCount}/> 
-                <TasksList arrForTodos={arrForTodos} deleteTodo={(id) => deleteTodo(id)}/> {/* How does it work????????? */}
+                <TasksList arrForTodos={arrForTodos} deleteTodo={(id) => deleteTodo(id)}/>
       </div>
     </div>
   );

@@ -7,21 +7,21 @@ interface CreateTodoFormProps {
     addTodo: (todo:ITodo) => void
 }
 
-const CreateTodoForm = ({addTodo}:CreateTodoFormProps) => {
-    const [value, setValue] = useState<string>('');
+const CreateTodoForm: React.FC<CreateTodoFormProps> = ({addTodo}) => {
+    const [inputValue, setInputValue] = useState<string>('');
 
     function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
-        setValue(event.target.value);
+        setInputValue(event.target.value);
     };
 
     function addElement() {
         const todo:ITodo = {
             id: Math.ceil(Math.random() * 1000000),
-            text: value,
+            text: inputValue,
         }
         if(todo.text) {
             addTodo(todo);
-            setValue('');
+            setInputValue('');
         } else {
             alert("Enter a correct value");
         }
@@ -31,16 +31,16 @@ const CreateTodoForm = ({addTodo}:CreateTodoFormProps) => {
         <div className="todo__new">
             <input 
                 onChange={changeValue} 
-                value={value} 
+                value={inputValue} 
                 id="new" 
                 type="text" 
                 placeholder="Add a new task inside"
             />
-            <div 
+            <button
                 id="add" 
                 className="myButton"
                 onClick={addElement}
-            >+</div>
+            >+</button>
         </div>
     );
 };

@@ -4,7 +4,7 @@ interface TodoCounterProps {
     todoCount: number
 }
 
-const TodoCounter = ({todoCount}: TodoCounterProps) => {
+const TodoCounter:React.FC<TodoCounterProps> = ({todoCount}) => {
     return (
         <div> 
             <span>Tasks in total:</span>

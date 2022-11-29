@@ -1,22 +1,22 @@
 import React from 'react';
 
-import {Todos} from '../types/types'
+import {ITodo, Todos} from '../types/types'
 import Task from './Task'
 
  interface TasksListProps {
-     arrForTodos: Todos
-     deleteTodo: (id:number) => void
+     todos: Todos
+     deleteTodo: (todo:ITodo) => void
  }
 
- const TasksList:React.FC<TasksListProps> = ({arrForTodos, deleteTodo}) => {
+ const TasksList:React.FC<TasksListProps> = ({todos, deleteTodo}) => {
 
     return (
         <div className="todo__list">
-            {arrForTodos.map(todo => 
+            {todos.map(todo => 
                 <Task 
                     todo={todo}
                     key={todo.id} 
-                    deleteTodo={() => deleteTodo(todo.id)}
+                    deleteTodo={() => deleteTodo(todo)}
                     />
                     )
             }
